@@ -1,0 +1,25 @@
+<ServerManagerConfiguration>
+  <ProxyGroup name="sources">
+    <SourceProxy name="SMTKMultiBlockReader" class="vtkSMTKMultiBlockReader" label="SMTK Geometry MultiBlock Reader">
+      <Documentation
+         long_help="TODO."
+         short_help="TODO.">
+      </Documentation>
+      <StringVectorProperty
+            name="FileName"
+            animateable="0"
+            command="SetFileName"
+            number_of_elements="1">
+        <FileListDomain name="files"/>
+        <Documentation>
+          TODO.
+        </Documentation>
+      </StringVectorProperty>
+      <Hints>
+        <ReaderFactory
+          extensions="off cholla brep occ iges igs step stp stl"
+          file_description="SMTK-supported file formats (cgm session)" />
+     </Hints>
+    </SourceProxy>
+  </ProxyGroup>
+</ServerManagerConfiguration>
