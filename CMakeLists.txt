@@ -13,7 +13,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 
 find_package(ParaView REQUIRED)
-include("${PARAVIEW_USE_FILE}")
+include(${PARAVIEW_USE_FILE})
 include(ParaViewPlugins)
 
 find_package(SMTK REQUIRED COMPONENTS smtkCore smtkCGMSession vtkSMTKReaderExt)
