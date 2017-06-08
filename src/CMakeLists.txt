@@ -1,9 +1,8 @@
 if (NOT PARAVIEW_BUILD_QT_GUI)
-  message(WARNING
+  message(FATAL_ERROR
     "${PROJECT_NAME} requires PARAVIEW_BUILD_QT_GUI to be enabled. "
     "Please rebuild ParaView (or point to a different build of ParaView) "
     "with PARAVIEW_BUILD_QT_GUI set to ON")
-  return()
 endif()
 
 if(PARAVIEW_QT_VERSION VERSION_GREATER "4")
