@@ -18,4 +18,10 @@ add_paraview_plugin(SMTKMultiBlockReader "1.0"
     vtkSMTKMultiBlockReader.cxx
 )
 
-target_link_libraries(SMTKMultiBlockReader PRIVATE smtkCore smtkCGMSession vtkSMTKSourceExt)
+target_link_libraries(SMTKMultiBlockReader PRIVATE
+  smtkCore
+  smtkCGMSession
+  vtkSMTKSourceExt
+  vtkSMTKFilterExt
+  vtkIOGDAL
+)
