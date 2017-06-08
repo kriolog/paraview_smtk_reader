@@ -1,6 +1,16 @@
-if(PARAVIEW_BUILD_QT_GUI)
+if (NOT PARAVIEW_BUILD_QT_GUI)
+  message(WARNING
+    "${PROJECT_NAME} requires PARAVIEW_BUILD_QT_GUI to be enabled. "
+    "Please rebuild ParaView (or point to a different build of ParaView) "
+    "with PARAVIEW_BUILD_QT_GUI set to ON")
+  return()
+endif()
+
+if(PARAVIEW_QT_VERSION VERSION_GREATER "4")
+  set(Qt5_FIND_COMPONENTS Core)
+else()
   include(${QT_USE_FILE})
-endif(PARAVIEW_BUILD_QT_GUI)
+endif()
 
 add_paraview_plugin(SMTKMultiBlockReader "1.0"
   SERVER_MANAGER_XML
